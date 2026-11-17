@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>AKU MUSLIM - Sahabat Ibadah Setiap Hari</title>
+    <meta name="description" content="Aplikasi Islami modern: jadwal sholat akurat Indonesia, Al-Qur'an digital 114 surah, kompas kiblat, doa dzikir harian, belajar hijaiyah & tajwid, mode anak dan lansia." />
+    <meta name="theme-color" content="#065f46" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="AKU MUSLIM" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AKU MUSLIM - Sahabat Ibadah Setiap Hari" />
+    <meta property="og:description" content="Aplikasi Islami modern: jadwal sholat akurat Indonesia, Al-Qur'an digital 114 surah, kompas kiblat, doa dzikir harian, belajar hijaiyah & tajwid, mode anak dan lansia." />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts: Plus Jakarta Sans & Amiri (Canonical Arabic Quranic font) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
+    <script>
+      // Suppress harmless WebSocket HMR proxy closure errors in iframe/container preview
+      window.addEventListener('error', function(e) {
+        if (e && e.message && (e.message.indexOf('WebSocket') !== -1 || e.message.indexOf('@vite/client') !== -1)) {
+          e.stopImmediatePropagation();
+          e.preventDefault();
+        }
+      }, true);
+      window.addEventListener('unhandledrejection', function(e) {
+        if (e && e.reason && String(e.reason).indexOf('WebSocket') !== -1) {
+          e.stopImmediatePropagation();
+          e.preventDefault();
+        }
+      }, true);
+    </script>
+  </head>
+  <body class="bg-[#fbfbf9] text-stone-900 antialiased selection:bg-emerald-100 selection:text-emerald-900 min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

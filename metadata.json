@@ -1,0 +1,10 @@
+{
+  "name": "AKU MUSLIM - Sahabat Ibadah Setiap Hari",
+  "description": "Aplikasi Islami modern: jadwal sholat akurat Indonesia, Al-Qur'an digital 114 surah, kompas kiblat, doa dzikir harian, belajar hijaiyah & tajwid, mode anak dan lansia.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

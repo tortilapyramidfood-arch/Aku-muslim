@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * AKU MUSLIM — TAHAP 7.8 GLOBAL TYPOGRAPHY DESIGN TOKENS (REVISI SKALA SATU TINGKAT TURUN)
+ * Keputusan Final Owner: Seluruh font aplikasi diturunkan satu tingkat secara proporsional.
+ * Ketentuan Mutlak: Ukuran font terkecil existing (2xs/13px dan micro-labels) TETAP dan JANGAN diperkecil lagi.
+ * - 24px -> 22px
+ * - 22px -> 20px
+ * - 20px -> 18px
+ * - 18px -> 16px
+ * - 16px -> 14px
+ * - 14px -> 13px (batas minimum kenyamanan baca)
+ * - Ukuran terkecil existing (13px / 2xs) -> TETAP.
+ */
+@theme {
+  --text-2xs: 0.8125rem; /* 13px - UKURAN TERKECIL TETAP */
+  --text-xs: 0.8125rem;  /* 13px (Turun dari 14px, batas minimum kenyamanan baca) */
+  --text-sm: 0.875rem;   /* 14px (Turun dari 16px) */
+  --text-base: 1rem;     /* 16px (Turun dari 18px) */
+  --text-lg: 1.125rem;   /* 18px (Turun dari 20px) */
+  --text-xl: 1.25rem;    /* 20px (Turun dari 22px) */
+  --text-2xl: 1.375rem;  /* 22px (Turun dari 24px) */
+  --text-3xl: 1.625rem;  /* 26px (Turun dari 30px) */
+  --text-4xl: 2rem;      /* 32px (Turun dari 36px) */
+}
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-arabic: 'Amiri', 'Scheherazade New', 'Traditional Arabic', serif;
+    font-size: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Elevate micro-labels so text is never too small to read on mobile screens (320px, 390px, 430px) */
+  .text-\[9px\], .text-\[10px\], .text-\[11px\] {
+    font-size: 0.8125rem !important; /* Min 13px */
+    line-height: 1.4 !important;
+  }
+}
+
+.font-arabic {
+  font-family: var(--font-arabic);
+  line-height: 2.3;
+}
+
+.rtl-mushaf-flow {
+  direction: rtl;
+  text-align: justify;
+  text-align-last: right;
+  unicode-bidi: plaintext;
+}
+
+/* Custom scrollbar for clean Islamic reading */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.45);
+}
+
+/* Prevent layout shift and accidental double-tap zoom delays on mobile */
+html {
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+/* Touch card line-clamp protection: ensure cards expand height instead of truncating unexpectedly */
+.touch-card-comfortable {
+  min-height: 48px;
+  word-break: break-word;
+}
+
+/*
+ * PREMIUM TAB TRANSITION ANIMATION (FADE-IN)
+ * Memberikan pengalaman perpindahan antar-tab navigasi bawah yang halus, anggun, dan responsif
+ */
+@keyframes tabFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-tab-fade {
+  animation: tabFadeIn 220ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-tab-fade {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AKU MUSLIM</string>
+    <string name="title_activity_main">AKU MUSLIM - Sahabat Ibadah Setiap Hari</string>
+    <string name="package_name">com.akumuslim.app</string>
+    <string name="custom_url_scheme">com.akumuslim.app</string>
+</resources>

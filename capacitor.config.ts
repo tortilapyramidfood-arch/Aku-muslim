@@ -1,0 +1,21 @@
+import type { CapacitorConfig } from '@capacitor/cli';
+
+const config: CapacitorConfig = {
+  appId: 'com.akumuslim.app',
+  appName: 'AKU MUSLIM',
+  webDir: 'dist',
+  android: {
+    allowMixedContent: false,
+    captureInput: true,
+    webContentsDebuggingEnabled: false,
+  },
+  plugins: {
+    LocalNotifications: {
+      smallIcon: 'ic_stat_icon_config_sample',
+      iconColor: '#065F46',
+      sound: 'adzan_makkah.mp3',
+    },
+  },
+};
+
+export default config;
